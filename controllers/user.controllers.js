@@ -9,9 +9,13 @@ export const signupFarmer = async (req, res) => {
     const existingFarmer = await Farmer.findOne({ phoneNumber });
 
     if (existingFarmer) {
-      const token = jwt.sign({ id: farmer._id }, process.env.JWT_SECRET_KEY, {
-        expiresIn: "7d",
-      });
+      const token = jwt.sign(
+        { id: existingFarmer._id },
+        process.env.JWT_SECRET_KEY,
+        {
+          expiresIn: "7d",
+        }
+      );
       return res
         .status(200)
         .json({ message: "Farmer already exists", existingFarmer, token });
