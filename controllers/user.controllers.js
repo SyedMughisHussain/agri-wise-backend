@@ -13,7 +13,7 @@ export const signupFarmer = async (req, res) => {
         expiresIn: "7d",
       });
       return res
-        .status(400)
+        .status(200)
         .json({ message: "Farmer already exists", existingFarmer, token });
     }
 
