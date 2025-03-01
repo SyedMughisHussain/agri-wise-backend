@@ -17,10 +17,6 @@ export const signupFarmer = async (req, res) => {
         }
       );
 
-      const response = await fetch(
-        "https://sendpk.com/api/sms.php?api_key=923193039832-f1d342a4-d03a-4e20-b309-b0cb3a131ea5&sender=BrandName&mobile=923193039832&message=TestSMS"
-      );
-
       return res.status(200).json({
         message: "Farmer already exists",
         existingFarmer,
