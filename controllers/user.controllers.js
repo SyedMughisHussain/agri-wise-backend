@@ -21,7 +21,6 @@ export const signupFarmer = async (req, res) => {
         message: "Farmer already exists",
         existingFarmer,
         token,
-        response,
       });
     }
 
