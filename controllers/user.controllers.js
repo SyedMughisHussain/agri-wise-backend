@@ -39,3 +39,23 @@ export const signupFarmer = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+
+export const getLoggedInUser = async (req, res) => {
+  try {
+    // req.user is already set by the auth middleware
+    const user = req.user;
+
+    console.log(user);
+
+    res.status(200).json({
+      success: true,
+      user: userWithoutPassword,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error fetching user details",
+      error: error.message,
+    });
+  }
+};
