@@ -11,7 +11,7 @@ export const authMiddleware = async (req, res, next) => {
         .json({ message: "Unauthorized: No token provided" });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
     const user = await Farmer.findById(decoded.id);
 
