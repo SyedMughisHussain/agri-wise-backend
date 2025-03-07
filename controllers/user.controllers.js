@@ -42,14 +42,10 @@ export const signupFarmer = async (req, res) => {
 
 export const getLoggedInUser = async (req, res) => {
   try {
-    // req.user is already set by the auth middleware
     const user = req.user;
-
-    console.log(user);
-
     res.status(200).json({
       success: true,
-      user: userWithoutPassword,
+      user,
     });
   } catch (error) {
     res.status(500).json({
