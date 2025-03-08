@@ -5,6 +5,7 @@ const FarmerSchema = new mongoose.Schema(
     name: {
       type: String,
       trim: true,
+      default: "",
     },
     phoneNumber: {
       type: Number,
@@ -13,6 +14,7 @@ const FarmerSchema = new mongoose.Schema(
     },
     location: {
       type: String,
+      default: "",
     },
     preferredLanguage: {
       type: String,

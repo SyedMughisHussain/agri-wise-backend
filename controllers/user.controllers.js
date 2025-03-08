@@ -55,3 +55,26 @@ export const getLoggedInUser = async (req, res) => {
     });
   }
 };
+
+export const updateUser = async (req, res) => {
+  try {
+    const { name } = req.body;
+    const user = req.user;
+    const updatedUser = await Farmer.findByIdAndUpdate(
+      user._id,
+      { name },
+      { new: true }
+    );
+    res.status(200).json({
+      success: true,
+      message: "User updated successfully",
+      updatedUser,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error while updating user",
+      error: error.message,
+    });
+  }
+};
