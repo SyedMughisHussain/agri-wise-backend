@@ -12,6 +12,6 @@ const router = express.Router();
 
 router.route("/signup").post(signupFarmer);
 router.route("/me").get(authMiddleware, getLoggedInUser);
-router.route("/update").patch(authMiddleware, updateUser);
+router.route("/update").put(authMiddleware, updateUser);
 
 export default router;
