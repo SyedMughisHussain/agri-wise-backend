@@ -24,7 +24,7 @@ const detectDisease = async (req, res) => {
 
     res.status(200).json({
       sucess: true,
-      data: generatedResponse.response.text(),
+      data: generatedResponse.response.text,
       error: false,
     });
   } catch (error) {
