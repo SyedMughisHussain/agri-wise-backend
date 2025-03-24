@@ -3,9 +3,6 @@ import connectDB from "./config/dbConnect.js";
 import cors from "cors";
 
 import "dotenv/config";
-
-import detectDiseaseRoutes from "./routes/detectDisease.routes.js";
-import diseasePrecautionsRoutes from "./routes/diseasePrecautions.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
 const app = express();
@@ -23,8 +20,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/api/v1/image", detectDiseaseRoutes);
-app.use("/api/v1/image", diseasePrecautionsRoutes);
 app.use("/api/v1/user", userRoutes);
 
 connectDB()
