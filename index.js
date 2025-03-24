@@ -4,6 +4,7 @@ import cors from "cors";
 
 import "dotenv/config";
 import userRoutes from "./routes/user.routes.js";
+import diagnoseRoutes from "./routes/diagnose.routes.js";
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/upload", diagnoseRoutes);
 
 connectDB()
   .then(() => {
