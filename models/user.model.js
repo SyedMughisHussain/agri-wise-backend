@@ -20,6 +20,10 @@ const FarmerSchema = new mongoose.Schema(
       type: String,
       default: "English",
     },
+    crops: {
+      type: [String],
+      default: [],
+    },
   },
   { timestamps: true }
 );
