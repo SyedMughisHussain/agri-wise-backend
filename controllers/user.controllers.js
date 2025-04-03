@@ -58,11 +58,11 @@ export const getLoggedInUser = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   try {
-    const { name, phoneNumber } = req.body;
+    const { name, phoneNumber, crops, location } = req.body;
     const user = req.user;
     const updatedUser = await Farmer.findByIdAndUpdate(
       user._id,
-      { name, phoneNumber },
+      { name, phoneNumber, crops, location },
       { new: true }
     );
     res.status(200).json({
